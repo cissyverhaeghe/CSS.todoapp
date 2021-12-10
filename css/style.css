@@ -182,8 +182,7 @@ body {
 }
 
 ::placeholder {
-  color: white;
-  opacity: 1;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 main {
@@ -198,43 +197,87 @@ main {
   min-height: 75px;
   margin-bottom: 20px;
   padding: 19px;
-  padding-right: 62px;
   position: relative;
 }
-.form input {
+.form__input {
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 20px;
+  color: #fff;
   background-color: #65c4ae;
-  color: white;
-  width: 100%;
-  border-style: none;
-  height: 64px;
-  padding-left: 17px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  width: calc(100% - 32.5px);
+  border-width: 0px;
+  height: 65px;
+  padding-left: 25px;
+  padding-right: 57.5px;
+  border-radius: 7px 0 0 7px;
+  outline: none;
 }
-.form button {
+.form__submit {
   position: absolute;
   width: 66px;
   height: 66px;
   border-radius: 50px;
-  right: 30px;
-  border: none;
+  right: 20px;
+  top: 20px;
+  border-width: 0;
+  cursor: pointer;
 }
-.form button::after {
-  height: 50px;
-  width: 50px;
+.form:after {
+  position: absolute;
   font-family: icons;
   content: "\e000";
   color: #19ba99;
+  font-size: 25px;
+  top: 40px;
+  right: 40px;
+}
+.form--error .form__input {
+  background-color: red;
+}
+.form--error .form__submit {
+  cursor: not-allowed;
 }
 
 .list__item {
+  display: flex;
   min-height: 20px;
   background-color: #fff;
+  margin: 0 auto;
   margin-bottom: 12px;
+  width: 90%;
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 1px 1px #ecedef;
 }
-.list__item span,
-.list__item button {
-  display: none;
+.list__item__text {
+  font-family: Roboto;
+  font-size: 20;
+  line-height: 20px;
+  color: #000;
+  display: block;
+  width: 350px;
+  margin-right: 20px;
+}
+.list__item__button {
+  border: none;
+  background: transparent;
+  font-family: icons;
+  font-size: 20px;
+  cursor: pointer;
+}
+.list__item__button--remove::after {
+  content: "\e001";
+  color: #dde2e1;
+  border-right: 1px solid #dde2e1;
+  padding-right: 17px;
+}
+.list__item__button--removed {
+  color: #dc3929;
+}
+.list__item__button--check::after {
+  content: "\e002";
+  color: #19ba99;
 }
 
 /*# sourceMappingURL=style.css.map */
