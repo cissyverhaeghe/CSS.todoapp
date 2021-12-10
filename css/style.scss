@@ -1,0 +1,72 @@
+@use "./base/reset";
+@use "./base/extends";
+@use "./base/fonts";
+@use "./base/mixins" as *;
+@use "./base/variables" as *;
+@use "./icons/icons";
+
+body {
+  background-color: $bodybg;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+main {
+  width: 90%;
+  margin: 20px auto;
+  max-width: 550px;
+}
+.form {
+  background-color: $green;
+  border-radius: 10px;
+  min-height: 75px;
+  margin-bottom: 20px;
+  padding: 19px;
+  padding-right: 62px;
+  position: relative;
+  input {
+    background-color: #65c4ae;
+    color: white;
+    width: 100%;
+    border-style: none;
+
+    height: 64px;
+    padding-left: 17px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  button {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    border-radius: 50px;
+    right: 30px;
+    border: none;
+  }
+  
+  button::after {
+    height: 50px;
+    width: 50px;
+    font-family: icons;
+    content: "\e000";
+    color: $green;
+  }
+}
+
+form input {
+}
+
+.list {
+  &__item {
+    min-height: 20px;
+    background-color: $white;
+    margin-bottom: 12px;
+    span,
+    button {
+      display: none;
+    }
+  }
+}
